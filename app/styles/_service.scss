@@ -1,0 +1,249 @@
+.service-page {
+  &__title {
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ebebeb;
+
+    h1 {
+      font-size: 20px;
+      line-height: 28px;
+      margin: 0;
+    }
+  }
+
+  &__section {
+    padding-top: 32px;
+    padding-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+
+    @include respond-above(tablet) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 600px;
+      color: #212121;
+      padding-left: 24px;
+      padding-right: 24px;
+
+      @include respond-above(tablet) {
+        order: 0;
+      }
+
+      @include respond-above(laptop) {
+        display: none;
+      }
+    }
+
+    p {
+      color: #333;
+      padding-left: 52px;
+      margin-bottom: 20px;
+
+      a {
+        text-decoration: none;
+        color: #007F41;
+      }
+    }
+
+    &__title-container {
+      padding-left: 24px;
+      padding-right: 24px;
+      color: #333;
+
+      @include respond-above(tablet) {
+        min-height: 136px;
+        margin-bottom: 64px;
+        display: flex;
+        align-items: center;
+        background-size: cover;
+        background-position: center center;
+        background-image: url('https://widget-cdn.simplepractice.com/assets/images/page-title-bg-f3edda2b3fe047ae7da853493dff04e2.jpg');
+      }
+
+      h1 {
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+
+        @include respond-above(tablet) {
+          font-size: 32px;
+          line-height: 36px;
+          text-transform: none;
+        }
+      }
+    }
+
+    &__inner-container {
+      @include respond-above(laptop) {
+        display: flex;
+      }
+    }
+
+    &__service-container {
+      &__go-back {
+        display: flex;
+        color: #007f41;
+        padding-left: 24px;
+        margin-top: 12px;
+        padding-bottom: 32px;
+        transform: translateX(-8px);
+        text-decoration: none;
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        @include respond-above(laptop) {
+          display: none;
+        }
+
+        .svg--green {
+          width: 28px;
+          height: 28px;
+          path {
+            fill: #007f41;
+          }
+        }
+      }
+
+      &__login {
+        background-color: #f2f2f2;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 24px;
+        padding-right: 24px;
+        margin-left: 24px;
+        margin-right: 24px;
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 20px;
+        color: #333;
+        margin-bottom: 32px;
+
+        @include respond-above(tablet) {
+          order: 1;
+          margin-left: 24px;
+        }
+
+        @include respond-above(laptop) {
+          margin-left: 0;
+        }
+
+        p {
+          display: block;
+
+          @include respond-above(laptop) {
+            display: inline;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: #007f41;
+          font-weight: 600;
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &:visited {
+            text-decoration: none;
+          }
+        }
+      }
+
+      &__service-list {
+        border-top: 1px solid #ebebeb;
+        padding-left: 0;
+        margin-top: 0;
+        margin-left: 24px;
+        margin-right: 24px;
+        color: #333;
+
+        @include respond-above(tablet) {
+          order: 3;
+        }
+
+        @include respond-above(laptop) {
+          margin-left: 0;
+          border-top: none;
+        }
+
+        &--location {
+          @include respond-above(laptop) {
+            display: flex;
+            flex-wrap: wrap;
+          }
+        }
+
+        li {
+          @include respond-above(laptop) {
+            border: 1px solid #ebebeb;
+            padding-left: 24px;
+            padding-right: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px 0 rgb(202, 217, 232, 0.25);
+          }
+        }
+
+        &--location {
+          li {
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+      }
+
+      @include respond-above(laptop) {
+        width: 100%;
+        padding-left: 32px;
+      }
+    }
+
+    &__appointment-steps {
+      display: none;
+
+      @include respond-above(laptop) {
+        display: block;
+        min-width: 200px;
+      }
+
+      ol {
+        list-style: none;
+        counter-reset: steps;
+
+        li {
+          counter-increment: steps;
+          padding-bottom: 16px;
+          color: #333;
+        }
+
+        li::before {
+          content: counter(steps);
+          margin-right: 8px;
+          color: #fff;
+          background-color: #333;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          line-height: 1.5em;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

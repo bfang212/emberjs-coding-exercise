@@ -1,0 +1,35 @@
+<li
+  class='service-card {{if @isLocation "service-card--location"}}'
+  {{did-insert this.addEventListener}}
+>
+  <div
+    class='service-card__container
+      {{if @isLocation "service-card__container--location"}}'
+  >
+    {{!-- {{#unless this.isLaptop}} --}}
+    {{#if this.isLaptop}}
+      {{#if @isLocation}}
+        <img
+          src='https://widget-cdn.simplepractice.com/assets/images/telehealth@2x-f0d7694d79cb6c472cf972617f3837be.png'
+          alt='placeholder'
+        />
+      {{/if}}
+    {{/if}}
+    <p
+      class='service-card__title
+        {{if @isLocation "service-card__title--location"}}'
+    >{{@title}}</p>
+    {{#if @description}}
+      <p
+        class='service-card__description
+          {{if @isLocation "service-card__description--location"}}'
+      >{{@description}}</p>
+    {{/if}}
+    {{!-- {{/unless}} --}}
+  </div>
+  <button
+    type='button'
+    class='service-card__button
+      {{if @isLocation "service-card__button--location"}}'
+  >SELECT</button>
+</li>

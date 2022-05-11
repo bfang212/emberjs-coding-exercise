@@ -1,0 +1,49 @@
+{{page-title 'Request Appointment | Demo Practice | SimplePractice'}}
+<main class='service-page'>
+  <header class='service-page__title'>
+    <h1>Demo Practice</h1>
+  </header>
+  <section class='service-page__section'>
+    <div class='service-page__section__title-container'>
+      <h1>Request an appointment</h1>
+    </div>
+    <h2>Select Service</h2>
+    <div class='service-page__section__inner-container'>
+      <div class='service-page__section__appointment-steps'>
+        <ol>
+          <li>
+            Select Service
+          </li>
+          <li>
+            Select Location
+          </li>
+          <li>
+            Select Date &amp; Time
+          </li>
+          <li>
+            Your Information
+          </li>
+        </ol>
+      </div>
+      <div class='service-page__section__service-container'>
+        <div class='service-page__section__service-container__login'>
+          <p>Already a client?</p>
+          <p>To request an appointment,
+            <a href='https://google.com' rel='nofollow noopener'>Sign In</a></p>
+        </div>
+        <ul
+          role='list'
+          class='service-page__section__service-container__service-list'
+        >
+          {{#each this.model as |service|}}
+            <ServiceCard
+              @title={{service.description}}
+              @description={{concat service.duration ' minutes'}}
+            />
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+{{outlet}}
