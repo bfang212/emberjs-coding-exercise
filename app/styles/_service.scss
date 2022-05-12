@@ -119,46 +119,5 @@
         padding-left: 32px;
       }
     }
-
-    &__appointment-steps {
-      display: none;
-
-      @include respond-above(laptop) {
-        display: block;
-        min-width: 200px;
-      }
-
-      ol {
-        list-style: none;
-        counter-reset: steps;
-
-        li {
-          counter-increment: steps;
-          padding-bottom: 16px;
-          color: #333;
-
-          .clinician {
-            margin-left: 28px;
-            color: #007f41;
-          }
-        }
-
-        li::before {
-          content: counter(steps);
-          margin-right: 8px;
-          color: #fff;
-          background-color: #333;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          line-height: 1.5em;
-          font-size: 14px;
-          font-weight: 600;
-        }
-      }
-    }
   }
 }

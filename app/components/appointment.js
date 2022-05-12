@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
-import { data } from '../data/services';
+import { data as serviceData } from '../data/services';
 import { action } from '@ember/object';
-import { data as locationData } from '../data/location-1';
+import { data as locationData } from '../data/location';
 import { inject as service } from '@ember/service';
 
 export default class AppointmentComponent extends Component {
@@ -15,7 +15,7 @@ export default class AppointmentComponent extends Component {
   get services() {
     // make the API Request with CLIENT_PORTAL_BASED_URL and CLIENT_ID
     // return services;
-    return data.map(({ id, type, attributes }) => ({
+    return serviceData.map(({ id, type, attributes }) => ({
       id,
       type,
       ...attributes,
@@ -23,6 +23,7 @@ export default class AppointmentComponent extends Component {
   }
 
   get locations() {
+    // make the API Request with cptCodeId to get back office data
     return locationData.map(({ id, type, attributes }) => ({
       id,
       type,
