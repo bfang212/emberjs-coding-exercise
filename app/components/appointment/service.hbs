@@ -1,0 +1,17 @@
+<div class='appointment__section__card-container__login'>
+  <p>Already a client?</p>
+  <p>To request an appointment,
+    <LinkTo @route='login'>Sign In</LinkTo></p>
+</div>
+<ul role='list' class='appointment-card-list'>
+  {{#each @services as |service|}}
+    <Appointment::Card @info={{service}} @cta={{@cta}}>
+      <p class='appointment-card__title'>{{service.description}}</p>
+      <p class='appointment-card__description'>{{concat
+          service.duration
+          ' minutes'
+        }}
+      </p>
+    </Appointment::Card>
+  {{/each}}
+</ul>

@@ -1,0 +1,25 @@
+/// Mixin to manage responsive breakpoints based on min-width.
+/// @param {String} $breakpoint - Breakpoint name
+/// @example @include respond-above('medium') {}
+/// @require $breakpoints
+@mixin respond-above($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    // Prints a media query based on the value
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+    @warn "No key matches `#{$breakpoint}`. Using as a literal measure."
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

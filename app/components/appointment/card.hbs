@@ -1,0 +1,19 @@
+<li class='appointment-card {{if @isLocation "appointment-card--location"}}'>
+  <div
+    class='appointment-card__container
+      {{if @isLocation "appointment-card__container--location"}}'
+  >
+    {{#if @imageSrc}}
+      <img src={{@imageSrc}} alt='picture of location' />
+    {{/if}}
+    {{yield}}
+  </div>
+  <LinkTo
+    @route='request.location'
+    {{on 'click' (fn @cta @info)}}
+    class='appointment-card__button
+      {{if @isLocation "appointment-card__button--location"}}'
+  >
+    SELECT
+  </LinkTo>
+</li>

@@ -1,0 +1,34 @@
+<LinkTo
+  class='appointment__section__card-container__go-back'
+  @route='request.service'
+>
+  {{inline-svg '/assets/icons/left-arrow.svg' class='svg--green'}}
+  <span>Select Service</span>
+</LinkTo>
+<ul role='list' class='appointment-card-list appointment-card-list--location'>
+  {{#each @locations as |location|}}
+    <Appointment::Card
+      @isLocation={{@isLocation}}
+      @imageSrc={{if
+        location.image
+        location.image
+        'https://widget-cdn.simplepractice.com/assets/images/telehealth@2x-f0d7694d79cb6c472cf972617f3837be.png'
+      }}
+      @info={{location}}
+      @cta={{@cta}}
+    >
+      <p
+        class='appointment-card__title appointment-card__title--location'
+      >{{location.name}}</p>
+      <p
+        class='appointment-card__description appointment-card__description--location'
+      >{{location.address}}</p>
+      <p
+        class='appointment-card__description appointment-card__description--location'
+      >{{concat location.city location.state}}</p>
+      <p
+        class='appointment-card__description appointment-card__description--location'
+      >{{location.phone}}</p>
+    </Appointment::Card>
+  {{/each}}
+</ul>

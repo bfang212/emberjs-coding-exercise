@@ -1,0 +1,26 @@
+<AppointmentContainer>
+  <section class='appointment__section' {{did-insert this.addEventListener}}>
+    <h2>Select Service</h2>
+    <div class='appointment__section__inner-container'>
+      <Appointment::Steps
+        @clinician={{this.clinician}}
+        @currentService={{@currentService}}
+      />
+      <div class='appointment__section__card-container'>
+        {{#if @isLocation}}
+          <Appointment::Location
+            @isLaptop={{this.isLaptop}}
+            @locations={{this.locations}}
+            @isLocation={{true}}
+            @cta={{this.updateLocation}}
+          />
+        {{else}}
+          <Appointment::Service
+            @services={{this.services}}
+            @cta={{this.updateService}}
+          />
+        {{/if}}
+      </div>
+    </div>
+  </section>
+</AppointmentContainer>
