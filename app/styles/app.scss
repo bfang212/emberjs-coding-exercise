@@ -2,5 +2,6 @@
 @import './variables/v-breakpoints';
 @import './mixins/m-responsive';
 
+@import '_application.scss';
 @import '_service.scss';
-@import '_service-card.scss';
+@import '_appointment-card.scss';

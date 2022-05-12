@@ -1,3 +1,3 @@
 import Controller from '@ember/controller';
 
-export default class ServiceCardController extends Controller {}
+export default class AppointmentController extends Controller {}

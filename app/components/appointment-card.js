@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
-export default class ServiceCardComponent extends Component {
+export default class AppointmentCardComponent extends Component {
   @tracked isLaptop = false;
 
   @action

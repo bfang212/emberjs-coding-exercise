@@ -1,10 +1,10 @@
 <li
-  class='service-card {{if @isLocation "service-card--location"}}'
+  class='appointment-card {{if @isLocation "appointment-card--location"}}'
   {{did-insert this.addEventListener}}
 >
   <div
-    class='service-card__container
-      {{if @isLocation "service-card__container--location"}}'
+    class='appointment-card__container
+      {{if @isLocation "appointment-card__container--location"}}'
   >
     {{!-- {{#unless this.isLaptop}} --}}
     {{#if this.isLaptop}}
@@ -16,20 +16,20 @@
       {{/if}}
     {{/if}}
     <p
-      class='service-card__title
-        {{if @isLocation "service-card__title--location"}}'
+      class='appointment-card__title
+        {{if @isLocation "appointment-card__title--location"}}'
     >{{@title}}</p>
     {{#if @description}}
       <p
-        class='service-card__description
-          {{if @isLocation "service-card__description--location"}}'
+        class='appointment-card__description
+          {{if @isLocation "appointment-card__description--location"}}'
       >{{@description}}</p>
     {{/if}}
     {{!-- {{/unless}} --}}
   </div>
   <button
     type='button'
-    class='service-card__button
-      {{if @isLocation "service-card__button--location"}}'
+    class='appointment-card__button
+      {{if @isLocation "appointment-card__button--location"}}'
   >SELECT</button>
 </li>
