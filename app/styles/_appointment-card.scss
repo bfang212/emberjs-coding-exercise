@@ -76,6 +76,10 @@
     padding-right: 16px;
     font-size: 14px;
     height: 36px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     // modifier for location cards
     &--location {

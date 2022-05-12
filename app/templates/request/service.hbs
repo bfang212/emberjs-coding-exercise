@@ -29,6 +29,8 @@
       >
         {{#each this.model as |service|}}
           <AppointmentCard
+            @info={{service}}
+            @updateService={{this.updateService}}
             @title={{service.description}}
             @description={{concat service.duration ' minutes'}}
           />

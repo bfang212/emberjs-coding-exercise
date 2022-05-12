@@ -6,7 +6,6 @@
     class='appointment-card__container
       {{if @isLocation "appointment-card__container--location"}}'
   >
-    {{!-- {{#unless this.isLaptop}} --}}
     {{#if this.isLaptop}}
       {{#if @isLocation}}
         <img
@@ -25,11 +24,13 @@
           {{if @isLocation "appointment-card__description--location"}}'
       >{{@description}}</p>
     {{/if}}
-    {{!-- {{/unless}} --}}
   </div>
-  <button
-    type='button'
+  <LinkTo
+    @route='request.location'
+    {{on 'click' (fn this.updateService @info)}}
     class='appointment-card__button
       {{if @isLocation "appointment-card__button--location"}}'
-  >SELECT</button>
+  >
+    SELECT
+  </LinkTo>
 </li>
