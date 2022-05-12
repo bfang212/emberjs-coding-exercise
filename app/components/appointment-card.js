@@ -4,7 +4,7 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 export default class AppointmentCardComponent extends Component {
   @tracked isLaptop = false;
-  @service('appointment-info') info;
+  @service('appointment-info') appointment;
 
   @action
   resizeWindow() {
@@ -23,7 +23,9 @@ export default class AppointmentCardComponent extends Component {
 
   @action
   updateService(service) {
-    this.info.setAppointmentService(service);
+    // depending on the use case, we can use global or localStorage
+    // to preserve state as we switch page
+    this.appointment.setAppointmentService(service);
     window.localStorage.setItem('service', JSON.stringify(service));
   }
 }

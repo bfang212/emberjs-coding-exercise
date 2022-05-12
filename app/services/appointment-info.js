@@ -10,7 +10,6 @@ export default class AppointmentInfoService extends Service {
   };
 
   setAppointmentService(service) {
-    console.log(service);
     this.appointment = {
       ...this.appointment,
       service,
