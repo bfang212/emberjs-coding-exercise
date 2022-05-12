@@ -1,4 +1,4 @@
-.service-page {
+.location-page {
   &__section {
     h2 {
       font-size: 24px;
@@ -16,6 +16,20 @@
       }
     }
 
+    > p {
+      color: #333;
+      padding-left: 52px;
+      margin-bottom: 20px;
+      max-width: 1024px;
+      margin-left: auto;
+      margin-right: auto;
+
+      a {
+        text-decoration: none;
+        color: #007F41;
+      }
+    }
+
     &__inner-container {
       @include respond-above(laptop) {
         display: flex;
@@ -26,48 +40,29 @@
     }
 
     &__service-container {
-      &__login {
-        background-color: #f2f2f2;
-        padding-top: 12px;
-        padding-bottom: 12px;
+      &__go-back {
+        display: flex;
+        color: #007f41;
         padding-left: 24px;
-        padding-right: 24px;
-        margin-left: 24px;
-        margin-right: 24px;
-        margin-top: 20px;
-        font-size: 14px;
-        line-height: 20px;
-        color: #333;
-        margin-bottom: 32px;
+        margin-top: 12px;
+        padding-bottom: 32px;
+        transform: translateX(-8px);
+        text-decoration: none;
+        cursor: pointer;
 
-        @include respond-above(tablet) {
-          order: 1;
-          margin-left: 24px;
+        &:hover {
+          text-decoration: underline;
         }
 
         @include respond-above(laptop) {
-          margin-left: 0;
+          display: none;
         }
 
-        p {
-          display: block;
-
-          @include respond-above(laptop) {
-            display: inline;
-          }
-        }
-
-        a {
-          text-decoration: none;
-          color: #007f41;
-          font-weight: 600;
-
-          &:hover {
-            text-decoration: underline;
-          }
-
-          &:visited {
-            text-decoration: none;
+        .svg--green {
+          width: 28px;
+          height: 28px;
+          path {
+            fill: #007f41;
           }
         }
       }

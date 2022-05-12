@@ -1,43 +1,45 @@
-<h2>Select Location</h2>
-<p>Existing client?
-  <a href='https://google.com' rel='nofollow noopener'>Sign In</a>
-</p>
-<div class='service-page__section__inner-container'>
-  <div class='service-page__section__appointment-steps'>
-    <ol>
-      <li>
-        Select Service
-      </li>
-      <li>
-        Select Location
-      </li>
-      <li>
-        Select Date &amp; Time
-      </li>
-      <li>
-        Your Information
-      </li>
-    </ol>
+<section class="location-page__section">
+  <h2>Select Location</h2>
+  <p>Existing client?
+    <a href='https://google.com' rel='nofollow noopener'>Sign In</a>
+  </p>
+  <div class='location-page__section__inner-container'>
+    <div class='location-page__section__appointment-steps'>
+      <ol>
+        <li>
+          Select Service
+        </li>
+        <li>
+          Select Location
+        </li>
+        <li>
+          Select Date &amp; Time
+        </li>
+        <li>
+          Your Information
+        </li>
+      </ol>
+    </div>
+    <div class='location-page__section__service-container'>
+      <LinkTo
+        class='location-page__section__service-container__go-back'
+        @route='request.service'
+      >
+        {{inline-svg '/assets/icons/left-arrow.svg' class='svg--green'}}
+        <span>Select Service</span>
+      </LinkTo>
+      <ul
+        role='list'
+        class='location-page__section__service-container__service-list location-page__section__service-container__service-list--location'
+      >
+        {{#each this.model as |location|}}
+          <AppointmentCard
+            @isLocation={{true}}
+            @title={{location.name}}
+            @description={{location.phone}}
+          />
+        {{/each}}
+      </ul>
+    </div>
   </div>
-  <div class='service-page__section__service-container'>
-    <LinkTo
-      class='service-page__section__service-container__go-back'
-      @route='request.service'
-    >
-      {{inline-svg '/assets/icons/left-arrow.svg' class='svg--green'}}
-      <span>Select Service</span>
-    </LinkTo>
-    <ul
-      role='list'
-      class='service-page__section__service-container__service-list service-page__section__service-container__service-list--location'
-    >
-      {{#each this.model as |location|}}
-        <AppointmentCard
-          @isLocation={{true}}
-          @title={{location.name}}
-          @description={{location.phone}}
-        />
-      {{/each}}
-    </ul>
-  </div>
-</div>
+</section>
