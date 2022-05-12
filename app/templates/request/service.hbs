@@ -1,34 +1,4 @@
-<AppointmentContainer>
-  <section class='service-page__section'>
-    <h2>Select Service</h2>
-    <div class='service-page__section__inner-container'>
-      <div class='service-page__section__appointment-steps'>
-        <ol>
-          <li>
-            Select Service
-          </li>
-          <li>
-            Select Location
-          </li>
-          <li>
-            Select Date &amp; Time
-          </li>
-          <li>
-            Your Information
-          </li>
-        </ol>
-      </div>
-      <div class='service-page__section__service-container'>
-        <div class='service-page__section__service-container__login'>
-          <p>Already a client?</p>
-          <p>To request an appointment,
-            <LinkTo @route='login'>Sign In</LinkTo></p>
-        </div>
-        <Appointment::Service 
-          @services={{this.model}}
-          @updateService={{this.updateService}}
-        />
-      </div>
-    </div>
-  </section>
-</AppointmentContainer>
+<Appointment
+  @clientPortalBaseUrl='https://johnny-appleseed.clientsecure.me/client-portal-api'
+  @clientId='2'
+/>

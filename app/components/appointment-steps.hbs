@@ -1,0 +1,17 @@
+<div class='service-page__section__appointment-steps'>
+  <ol>
+    <li>Clinician
+      {{#if @clinician}}
+        <div class='clinician'>{{@clinician}}</div>
+      {{/if}}
+    </li>
+    <li>Select Service
+      {{#if @currentService}}
+        <div class='clinician'>{{get @currentService 'description'}}</div>
+        <div class='clinician'>{{get @currentService 'duration'}} minutes</div>
+      {{/if}}</li>
+    <li>Select Location</li>
+    <li>Select Date &amp; Time</li>
+    <li>Your Information</li>
+  </ol>
+</div>

@@ -1,0 +1,30 @@
+<AppointmentContainer>
+  <section class='service-page__section'>
+    <h2>Select Service</h2>
+    <div class='service-page__section__inner-container'>
+      <AppointmentSteps @clinician={{this.clinician}} @currentService={{@currentService}}/>
+      <div class='service-page__section__service-container'>
+        {{#if @isLocation}}
+          <LinkTo
+            class='location-page__section__service-container__go-back'
+            @route='request.service'
+          >
+            {{inline-svg '/assets/icons/left-arrow.svg' class='svg--green'}}
+            <span>Select Service</span>
+          </LinkTo>
+          <Appointment::Location @locations={{this.locations}} />
+        {{else}}
+          <div class='service-page__section__service-container__login'>
+            <p>Already a client?</p>
+            <p>To request an appointment,
+              <LinkTo @route='login'>Sign In</LinkTo></p>
+          </div>
+          <Appointment::Service
+            @services={{this.services}}
+            @updateService={{this.setAppointmentService}}
+          />
+        {{/if}}
+      </div>
+    </div>
+  </section>
+</AppointmentContainer>

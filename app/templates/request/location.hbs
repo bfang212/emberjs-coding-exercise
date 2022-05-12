@@ -1,36 +1,6 @@
-<AppointmentContainer>
-  <section class='location-page__section'>
-    <h2>Select Location</h2>
-    <p>Existing client?
-      <LinkTo @route='login'>Sign In</LinkTo>
-    </p>
-    <div class='location-page__section__inner-container'>
-      <div class='location-page__section__appointment-steps'>
-        <ol>
-          <li>
-            Select Service
-          </li>
-          <li>
-            Select Location
-          </li>
-          <li>
-            Select Date &amp; Time
-          </li>
-          <li>
-            Your Information
-          </li>
-        </ol>
-      </div>
-      <div class='location-page__section__service-container'>
-        <LinkTo
-          class='location-page__section__service-container__go-back'
-          @route='request.service'
-        >
-          {{inline-svg '/assets/icons/left-arrow.svg' class='svg--green'}}
-          <span>Select Service</span>
-        </LinkTo>
-        <Appointment::Location @locations={{this.model}} />
-      </div>
-    </div>
-  </section>
-</AppointmentContainer>
+<Appointment
+  @clientPortalBaseUrl='https://johnny-appleseed.clientsecure.me/client-portal-api'
+  @clientId='2'
+  @isLocation={{true}}
+  @currentService={{@model}}
+/>

@@ -136,6 +136,11 @@
           counter-increment: steps;
           padding-bottom: 16px;
           color: #333;
+
+          .clinician {
+            margin-left: 28px;
+            color: #007f41;
+          }
         }
 
         li::before {

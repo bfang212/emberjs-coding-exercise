@@ -4,16 +4,14 @@ import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 export default class AppointmentCardComponent extends Component {
   @tracked isLaptop = false;
-  @service('appointment-info') appointment;
+  @service('appointment-info') info;
 
   @action
   resizeWindow() {
     if (window.innerWidth >= 1000) {
       this.isLaptop = true;
-      console.log(this.isLaptop);
     } else {
       this.isLaptop = false;
-      console.log(this.isLaptop);
     }
   }
 
@@ -25,6 +23,7 @@ export default class AppointmentCardComponent extends Component {
 
   @action
   updateService(service) {
-    this.appointment.setAppointmentService(service);
+    this.info.setAppointmentService(service);
+    window.localStorage.setItem('service', JSON.stringify(service));
   }
 }
