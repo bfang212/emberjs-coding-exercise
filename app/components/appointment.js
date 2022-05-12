@@ -3,9 +3,10 @@ import { data as serviceData } from '../data/services';
 import { data as locationData } from '../data/location';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
-
+import { tracked } from '@glimmer/tracking';
 export default class AppointmentComponent extends Component {
   @service('appointment-info') appointment;
+  @tracked isLaptop = false;
 
   clientBaseUrl = this.args.clientBaseUrl;
   clientId = this.args.clientId;
@@ -46,5 +47,20 @@ export default class AppointmentComponent extends Component {
     this.appointment.setAppointmentLocation(location);
     window.localStorage.setItem('location', JSON.stringify(location));
     console.log(location);
+  }
+
+  @action
+  resizeWindow() {
+    if (window.innerWidth >= 1000) {
+      this.isLaptop = true;
+    } else {
+      this.isLaptop = false;
+    }
+  }
+
+  @action
+  addEventListener() {
+    this.resizeWindow();
+    window.addEventListener('resize', this.resizeWindow);
   }
 }

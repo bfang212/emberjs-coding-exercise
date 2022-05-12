@@ -1,11 +1,11 @@
-<div class='service-page__section__service-container__login'>
+<div class='appointment__section__card-container__login'>
   <p>Already a client?</p>
   <p>To request an appointment,
     <LinkTo @route='login'>Sign In</LinkTo></p>
 </div>
-<ul role='list' class='appointment-service-list'>
+<ul role='list' class='appointment-card-list'>
   {{#each @services as |service|}}
-    <AppointmentCard
+    <Appointment::Card
       @info={{service}}
       @cta={{@cta}}
       @title={{service.description}}

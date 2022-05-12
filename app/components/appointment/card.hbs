@@ -1,12 +1,9 @@
-<li
-  class='appointment-card {{if @isLocation "appointment-card--location"}}'
-  {{did-insert this.addEventListener}}
->
+<li class='appointment-card {{if @isLocation "appointment-card--location"}}'>
   <div
     class='appointment-card__container
       {{if @isLocation "appointment-card__container--location"}}'
   >
-    {{#if this.isLaptop}}
+    {{#if @isLaptop}}
       {{#if @isLocation}}
         <img
           src='https://widget-cdn.simplepractice.com/assets/images/telehealth@2x-f0d7694d79cb6c472cf972617f3837be.png'

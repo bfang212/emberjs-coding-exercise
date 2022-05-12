@@ -26,11 +26,16 @@
       line-height: 20px;
       margin-bottom: 8px;
       text-transform: uppercase;
+      margin-top: 32px;
 
       @include respond-above(tablet) {
         font-size: 32px;
         line-height: 36px;
         text-transform: none;
+      }
+
+      @include respond-above(tablet) {
+        margin-top: 0;
       }
     }
   }
