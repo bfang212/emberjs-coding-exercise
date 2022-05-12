@@ -5,6 +5,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 2px 4px 0 rgb(202, 217, 232, 0.25);
+
+  &:hover {
+    box-shadow: 0 4px 12px 0 rgb(202, 217, 232, 0.50);
+  }
 
   &--location {
     @include respond-above(laptop) {
