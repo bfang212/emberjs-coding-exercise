@@ -14,11 +14,16 @@
       counter-increment: steps;
       padding-bottom: 16px;
       color: #333;
+      opacity: 0.2;
 
       .clinician {
         margin-left: 28px;
         color: #007f41;
       }
+    }
+
+    li.active {
+      opacity: 1;
     }
 
     li::before {
