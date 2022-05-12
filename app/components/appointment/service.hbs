@@ -1,8 +1,13 @@
-<ul role='list' class='service-page__section__service-container__service-list'>
+<div class='service-page__section__service-container__login'>
+  <p>Already a client?</p>
+  <p>To request an appointment,
+    <LinkTo @route='login'>Sign In</LinkTo></p>
+</div>
+<ul role='list' class='appointment-service-list'>
   {{#each @services as |service|}}
     <AppointmentCard
       @info={{service}}
-      @updateService={{@updateService}}
+      @cta={{@cta}}
       @title={{service.description}}
       @description={{concat service.duration ' minutes'}}
     />

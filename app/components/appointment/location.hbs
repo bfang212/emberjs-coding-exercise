@@ -1,12 +1,18 @@
-<ul
-  role='list'
-  class='location-page__section__service-container__service-list location-page__section__service-container__service-list--location'
+<LinkTo
+  class='location-page__section__service-container__go-back'
+  @route='request.service'
 >
+  {{inline-svg '/assets/icons/left-arrow.svg' class='svg--green'}}
+  <span>Select Service</span>
+</LinkTo>
+<ul role='list' class='appointment-location-list'>
   {{#each @locations as |location|}}
     <AppointmentCard
-      @isLocation={{true}}
+      @isLocation={{@isLocation}}
       @title={{location.name}}
+      @info={{location}}
       @description={{location.phone}}
+      @cta={{@cta}}
     />
   {{/each}}
 </ul>

@@ -21,11 +21,11 @@ export default class AppointmentCardComponent extends Component {
     window.addEventListener('resize', this.resizeWindow);
   }
 
-  @action
-  updateService(service) {
-    // depending on the use case, we can use global or localStorage
-    // to preserve state as we switch page
-    this.appointment.setAppointmentService(service);
-    window.localStorage.setItem('service', JSON.stringify(service));
-  }
+  // @action
+  // updateService(service) {
+  //   // depending on the use case, we can use global or localStorage
+  //   // to preserve state as we switch page
+  //   this.appointment.setAppointmentService(service);
+  //   window.localStorage.setItem('service', JSON.stringify(service));
+  // }
 }

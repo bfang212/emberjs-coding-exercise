@@ -1,7 +1,7 @@
 import Component from '@glimmer/component';
 import { data as serviceData } from '../data/services';
-import { action } from '@ember/object';
 import { data as locationData } from '../data/location';
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
 export default class AppointmentComponent extends Component {
@@ -32,18 +32,19 @@ export default class AppointmentComponent extends Component {
   }
 
   @action
-  setAppointmentService(service) {
-    this.appointment = {
-      ...this.appointment,
-      service,
-    };
+  updateService(service) {
+    // depending on the use case, we can use global or localStorage
+    // to preserve state as we switch page
+    this.appointment.setAppointmentService(service);
+    window.localStorage.setItem('service', JSON.stringify(service));
   }
 
   @action
-  setAppointmentLocation(location) {
-    this.appointment = {
-      ...this.appointment,
-      location,
-    };
+  updateLocation(location) {
+    // depending on the use case, we can use global or localStorage
+    // to preserve state as we switch page
+    this.appointment.setAppointmentLocation(location);
+    window.localStorage.setItem('location', JSON.stringify(location));
+    console.log(location);
   }
 }

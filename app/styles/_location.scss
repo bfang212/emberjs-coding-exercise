@@ -26,7 +26,7 @@
 
       a {
         text-decoration: none;
-        color: #007F41;
+        color: #007f41;
       }
     }
 
@@ -66,53 +66,38 @@
           }
         }
       }
+    }
+  }
+}
 
-      &__service-list {
-        border-top: 1px solid #ebebeb;
-        padding-left: 0;
-        margin-top: 0;
-        margin-left: 24px;
-        margin-right: 24px;
-        color: #333;
+.appointment-location-list {
+  border-top: 1px solid #ebebeb;
+  padding-left: 0;
+  margin-top: 0;
+  margin-left: 24px;
+  margin-right: 24px;
+  color: #333;
 
-        @include respond-above(tablet) {
-          order: 3;
-        }
+  @include respond-above(tablet) {
+    order: 3;
+  }
 
-        @include respond-above(laptop) {
-          margin-left: 0;
-          border-top: none;
-        }
+  @include respond-above(laptop) {
+    margin-left: 0;
+    border-top: none;
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-        &--location {
-          @include respond-above(laptop) {
-            display: flex;
-            flex-wrap: wrap;
-          }
-        }
+  li {
+    padding-left: 0;
+    padding-right: 0;
 
-        li {
-          @include respond-above(laptop) {
-            border: 1px solid #ebebeb;
-            padding-left: 24px;
-            padding-right: 24px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px 0 rgb(202, 217, 232, 0.25);
-          }
-        }
-
-        &--location {
-          li {
-            padding-left: 0;
-            padding-right: 0;
-          }
-        }
-      }
-
-      @include respond-above(laptop) {
-        width: 100%;
-        padding-left: 32px;
-      }
+    @include respond-above(laptop) {
+      border: 1px solid #ebebeb;
+      margin-bottom: 20px;
+      margin-right: 16px;
+      box-shadow: 0 2px 4px 0 rgb(202, 217, 232, 0.25);
     }
   }
 }

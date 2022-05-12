@@ -27,7 +27,7 @@
   </div>
   <LinkTo
     @route='request.location'
-    {{on 'click' (fn this.updateService @info)}}
+    {{on 'click' (fn @cta @info)}}
     class='appointment-card__button
       {{if @isLocation "appointment-card__button--location"}}'
   >
