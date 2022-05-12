@@ -20,42 +20,4 @@
       max-width: 1240px;
     }
   }
-
-  &__section {
-    &__background {
-      @include respond-above(tablet) {
-        min-height: 136px;
-        margin-bottom: 64px;
-        display: flex;
-        align-items: center;
-        background-size: cover;
-        background-position: center center;
-        background-image: url('https://widget-cdn.simplepractice.com/assets/images/page-title-bg-f3edda2b3fe047ae7da853493dff04e2.jpg');
-      }
-    }
-
-    &__title {
-      padding-left: 24px;
-      padding-right: 24px;
-      color: #333;
-      max-width: 1024px;
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-
-      h1 {
-        font-size: 13px;
-        font-weight: 400;
-        line-height: 20px;
-        margin-bottom: 8px;
-        text-transform: uppercase;
-
-        @include respond-above(tablet) {
-          font-size: 32px;
-          line-height: 36px;
-          text-transform: none;
-        }
-      }
-    }
-  }
 }

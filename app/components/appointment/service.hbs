@@ -1,0 +1,10 @@
+<ul role='list' class='service-page__section__service-container__service-list'>
+  {{#each @services as |service|}}
+    <AppointmentCard
+      @info={{service}}
+      @updateService={{@updateService}}
+      @title={{service.description}}
+      @description={{concat service.duration ' minutes'}}
+    />
+  {{/each}}
+</ul>

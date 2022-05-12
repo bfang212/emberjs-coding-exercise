@@ -1,0 +1,12 @@
+<ul
+  role='list'
+  class='location-page__section__service-container__service-list location-page__section__service-container__service-list--location'
+>
+  {{#each @locations as |location|}}
+    <AppointmentCard
+      @isLocation={{true}}
+      @title={{location.name}}
+      @description={{location.phone}}
+    />
+  {{/each}}
+</ul>
